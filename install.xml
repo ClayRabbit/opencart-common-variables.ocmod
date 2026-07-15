@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Common Variables</name>
+  <version>1.0</version>
+  <author>Andrey Chesnakov</author>
+  <link>https://clayrabbit.ru</link>
+  <code>cr_common_variables</code>
+
+  <!-- Pass common info to every template -->
+  <file path="system/engine/loader.php">
+    <operation error="log">
+      <search><![CDATA[$template = new Template($this->registry->get('config')->get('template_]]></search>
+      <add position="after"><![CDATA[
+if (!defined('DIR_CATALOG')){
+	if (!isset($data['_get'])) {
+      $data['_get'] = $this->registry->get('request')->get;
+    }
+    if (!isset($data['_config'])) {
+      $data['_config'] = array(
+        'name'      => $this->registry->get('config')->get('config_name'),
+        'address'   => $this->registry->get('config')->get('config_address'),
+        'geocode'   => $this->registry->get('config')->get('config_geocode'),
+        'email'     => $this->registry->get('config')->get('config_email'),
+        'telephone' => $this->registry->get('config')->get('config_telephone'),
+        'fax'       => $this->registry->get('config')->get('config_fax'),
+        'open'      => $this->registry->get('config')->get('config_open'),
+        'url'       => $this->registry->get('config')->get('config_url'),
+      );
+    }
+    if (!isset($data['_customer'])) {
+      $data['_customer'] = array(
+        'id'         => $this->registry->get('customer')->getId(),
+        'firstname'  => $this->registry->get('customer')->getFirstName(),
+        'lastname'   => $this->registry->get('customer')->getLastName(),
+        'email'      => $this->registry->get('customer')->getEmail(),
+        'telephone'  => $this->registry->get('customer')->getTelephone(),
+        'newsletter' => $this->registry->get('customer')->getNewsletter(),
+        'group_id'   => $this->registry->get('customer')->getGroupId(),
+      );
+    }
+}
+   	  ]]></add>
+    </operation>
+  </file>
+</modification>

@@ -1,0 +1,7 @@
+# Allow only release files in the repo
+*
+!.gitignore
+!upload/
+!install.xml
+!README*
+!CHANGELOG.md*
