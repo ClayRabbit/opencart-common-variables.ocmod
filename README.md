@@ -1,6 +1,6 @@
-# Common Variables for OpenCart
+# Common Variables for Opencart templates
 
-[Русский](README.ru.md)
+[Russian](README.ru.md)
 
 Quickly use store contact details, customer information, or even GET request parameters in any storefront `.twig` template — without adding the same changes in every controller.
 
@@ -37,10 +37,9 @@ The modification hooks into `system/engine/loader.php` and enriches the `$data` 
 
 ---
 
-## Related modules
+## Other modules
 
-For the same variables inside admin-edited HTML content, use the **ShortCodes** module from the author's OpenCart Marketplace profile.
-
+For the same variables in admin-edited HTML content, use the **ShortCodes**[#link] module.
 Both modules can be used together or separately.
 
 ---
@@ -55,13 +54,13 @@ Both modules can be used together or separately.
 
 ## Requirements
 
-- OpenCart 2.3 or 3.x
+- OpenCart 2.3/3.x
 
 ---
 
 ## Support
 
-Provided as-is. Paid support and custom work: https://t.me/clayrabbit
+Distributed free of charge, as is (AS IS). Paid integration help and custom development — https://t.me/clayrabbit
 
 ---
 
